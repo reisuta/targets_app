@@ -1,0 +1,30 @@
+<% provide(:title, t('technology.index')) %>
+<h3 class="mt-3 text-center"><%= t('technology.index')%></h3>
+
+<div class="d-flex justify-content-end">
+  <%= link_to "新規作成", new_technology_path, class: 'mb-3 btn btn-primary' %>
+</div>
+
+<%= search_form_for @q, class: 'row g-3', url: technologies_path do |f| %>
+  <div>
+    <%= f.label :name_cont, '使用技術名', class: 'form-label' %>
+    <%= f.search_field :name_cont, class: 'form-control' %>
+  </div>
+  <div>
+    <%= f.submit "クリア", type: :reset, class: 'btn btn-light' %>
+    <%= f.submit '検索', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<table class="mt-3 table table-bordered">
+  <tr>
+  <th><%= sort_link(@q, :name, '使用技術名', class: 'nav-link') %></th>
+  </tr>
+  
+  <% @technologies.each do |technology| %>
+    <tr>
+      <td><%= link_to technology.name, technology_path(technology), class: 'nav-link' %></td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @technologies %>

@@ -1,0 +1,9 @@
+<% provide(:title, t('technology.edit')) %>
+<h3 class="mt-3 text-center"><%= t('technology.edit')%></h3>
+
+<%= form_with(model: @technology, local: true) do |f| %>
+  <%= render 'shared/error_messages', model: @technology %>
+  <%= f.label :name, '使用技術名', class: 'form-label background-color' %>
+  <%= f.text_field :name, value: @technology.name, class: 'form-control' %>
+  <%= f.submit "更新", class: 'mt-3 btn btn-primary' %>
+<% end %>

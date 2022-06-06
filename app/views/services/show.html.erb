@@ -1,0 +1,21 @@
+<% provide(:title, t('title.service.show')) %>
+<h3 class="mt-3 text-center"><%= t('title.service.show')%></h3>
+
+<table class="mt-3 table table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>サービス名</th>
+    <th>作成日時</th>
+    <th>更新日時</th>
+    <th>編集</th>
+    <th>削除</th>
+  </tr>
+  <tr>
+    <td><%= @service.id %></td>
+    <td><%= @service.name %></td>
+    <td><%= @service.created_at %></td>
+    <td><%= @service.updated_at %></td>
+    <td><%= link_to "編集", edit_service_path(@service.id), class: 'btn btn-primary' %></td>
+    <td><%= button_to '削除', service_path(@service.id), method: :delete, form:{ data: { turbo_confirm: "サービスをを削除します。よろしいですか？"  }}, class: 'btn btn-danger' %></td> 
+  </tr>
+</table>

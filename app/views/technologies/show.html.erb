@@ -1,0 +1,21 @@
+<% provide(:title, t('technology.show')) %>
+<h3 class="mt-3 text-center"><%= t('technology.show')%></h3>
+
+<table class="mt-3 table table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>サービス名</th>
+    <th>作成日時</th>
+    <th>更新日時</th>
+    <th>編集</th>
+    <th>削除</th>
+  </tr>
+  <tr>
+    <td><%= @technology.id %></td>
+    <td><%= @technology.name %></td>
+    <td><%= @technology.created_at %></td>
+    <td><%= @technology.updated_at %></td>
+    <td><%= link_to "編集", edit_technology_path(@technology.id), class: 'btn btn-primary' %></td>
+    <td><%= button_to '削除', technology_path(@technology.id), method: :delete, form:{ data: { turbo_confirm: "使用技術「#{@technology.name}」を削除します。よろしいですか？"  }}, class: 'btn btn-danger' %></td> 
+  </tr>
+</table>

@@ -1,0 +1,9 @@
+<% provide(:title, t('title.service.edit')) %>
+<h3 class="mt-3 text-center"><%= t('title.service.edit')%></h3>
+
+<%= form_with(model: @service, local: true) do |f| %>
+  <%= render "shared/error_messages", model: @service %>
+  <%= f.label :name, 'サービス名', class: 'form-label background-color' %>
+  <%= f.text_field :name, value: @service.name, class: 'form-control less-length mar-bottom' %>
+  <%= f.submit "更新", class: 'mt-3 btn btn-primary' %>
+<% end %>

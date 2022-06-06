@@ -1,0 +1,16 @@
+ja:
+  devise:
+    subimit:
+      login: 'ログイン'
+      google_login: 'googleでログイン'
+    failure:
+      already_authenticated: 'すでにログインしています。'
+      invalid: "%{authentication_keys} もしくはパスワードが不正です。"
+      unauthenticated: 'アカウント登録もしくはログインしてください。'
+    omniauth_callbacks:
+      failure: 'Googleアカウント認証に失敗しました。'
+      success: 'Googleアカウント認証に成功しました。'
+    sessions:
+      signed_in: 'ログインに成功しました。'
+      signed_out: 'ログアウトに成功しました。'
+      already_signed_out: '既にログアウト済みです。'

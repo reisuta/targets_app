@@ -1,0 +1,18 @@
+<h2><%= t('title.login') %></h2>
+<%= form_with scope: :user, url: login_path, data: { turbo: false } do |f| %>
+  <div class="field">
+    <%= f.label :email, class: 'form-label background-color' %>
+    <%= f.email_field :email, class: 'form-control less-length mar-bottom' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'form-label background-color' %><br />
+    <%= f.password_field :password, class: 'form-control less-length mar-bottom' %>
+  </div>
+
+  <div class="mt-3 mb-3">
+    <%= f.submit t('devise.subimit.login'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= button_to t('devise.subimit.google_login'), user_google_oauth2_omniauth_authorize_path,　method: :post, data: { turbo: false } %>

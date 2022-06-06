@@ -1,0 +1,31 @@
+<% provide(:title, t('title.activity.show')) %>
+<h3 class="mt-3 text-center"><%= t('title.activity.show')%></h3>
+
+<table class="mt-3 table table-bordered">
+  <tr>
+    <th>タイトル</th>
+    <th>PM名</th>
+    <th>金額</th>
+    <th>機密フラグ</th>
+    <th>提案骨子</th>
+    <th>提案詳細</th>
+    <th>コメント</th>
+    <th>開始日時</th>
+    <th>終了日時</th>
+  </tr>
+  <tr>
+    <td><%= @activity.title %></td>
+    <td><%= @activity.leader_name %></td>
+    <td><%= @activity.amount %></td>
+    <td><%= @activity.is_secret %></td>
+    <td><%= @activity.suggestion_summary %></td>
+    <td><%= @activity.suggestion_detail %></td>
+    <td><%= @activity.comment %></td>
+    <td><%= @activity.started_at %></td>
+    <td><%= @activity.ended_at %></td>
+  </tr>
+</table>
+
+<div class="d-flex justify-content-end">
+  <%= link_to "戻る", activities_path, class: 'mb-3 btn btn-primary' %>
+</div>

@@ -1,0 +1,58 @@
+ja:
+  title:
+    activity:
+      index: 活動一覧
+      show: 活動詳細
+      new: 活動新規作成
+      edit: 活動編集
+    service:
+      index: サービス一覧
+      show: サービス詳細
+      new: サービス新規作成
+      edit: サービス編集
+    login: ログイン
+    technology:
+      index: 使用技術一覧
+      show: 使用技術詳細
+      new: 使用技術新規作成
+      edit: 使用技術編集
+  activerecord:
+    attributes:
+      activity:
+        requirement_id: 要件ID
+        title: タイトル
+        leader_name: PM名
+        amount: 金額
+        is_secret: 機密フラグ
+        suggestion_summary: 提案骨子
+        suggestion_detail: 提案詳細
+        comment: コメント
+        started_at: 開始日時
+        ended_at: 終了日時
+      technology:
+        name: 使用技術名
+      service:
+        name: サービス名
+      user:
+        email: メールアドレス
+        password: パスワード
+    errors:
+      models:
+        service:
+          attributes:
+            name:
+              blank: は必須項目です。
+        activity:
+          attributes:
+            title:
+              blank: は必須項目です。
+            leader_name:
+              blank: は必須項目です。
+            amount:
+              blank: は必須項目です。
+              not_a_number: は数値で入力してください。
+              greater_than_or_equal_to: は整数で入力してください。
+            suggestion_summary:
+              blank: は必須項目です。
+            suggestion_detail:
+              blank: は必須項目です。
